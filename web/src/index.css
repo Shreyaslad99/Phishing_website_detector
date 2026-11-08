@@ -1,0 +1,45 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scroll-behavior for smooth anchor scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glitch effect for hero title */
+.glitch {
+  position: relative;
+  color: #e11d2e;
+  animation: glitch 1s linear infinite;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  clip: rect(0, 9999px, 0, 0);
+}
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 #00ffff;
+  animation: glitch 2s infinite;
+}
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 #ff00ff;
+  animation: glitch 3s infinite;
+}
+@keyframes glitch {
+  0% { clip: rect(0, 9999px, 0, 0); }
+  20% { clip: rect(5px, 9999px, 10px, 0); }
+  40% { clip: rect(15px, 9999px, 20px, 0); }
+  60% { clip: rect(0, 9999px, 0, 0); }
+  80% { clip: rect(10px, 9999px, 15px, 0); }
+  100% { clip: rect(0, 9999px, 0, 0); }
+}
+
