@@ -10,3 +10,9 @@ yarn-error.log
 .env.development.local
 .env.test.local
 .env.production.local
+# Python/pytest caches
+.pytest_cache/
+# Virtual environment
+.venv/
+# Large raw data – keep outside Git or handle with Git-LFS
+data/
